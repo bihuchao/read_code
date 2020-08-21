@@ -7,3 +7,6 @@
 * git dirty: git diff 函数
 * build-id: 主机名等信息
 通过这些信息拼装经过crc64可以得到一个build_id。
+
+## crc校验
+redis包含crc32 / crc64校验计算法
