@@ -8,5 +8,14 @@
 * build-id: 主机名等信息
 通过这些信息拼装经过crc64可以得到一个build_id。
 
-## crc校验
-redis包含crc32 / crc64校验计算法
+## hash算法
+* redis包含sha1 / crc32 / crc64 / murmurhash2
+* sha1: 一串字符串 => 40位字符串 40 B
+* crc : 循环冗余校验, 一块内存 => 16 b / 64 b
+* mrumurhash2 : 一块内存 => 4 B
+
+## 大小端转换
+* Redis使用小端，如果是大端的话，需要进行转换
+
+## 内存测试
+* 包括内存寻址A测试和随机读写R测试
